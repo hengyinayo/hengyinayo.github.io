@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ipybb 테스팅 | 흥이나요 컴퍼니</title>
-<meta name="description" content="print(&quot;hello&quot;)">
+<!-- begin _includes/seo.html --><title>Github Blog (with Minimal Mistakes) | 흥이나요 컴퍼니</title>
+<meta name="description" content="실시간 모니터링">
 
 
   <meta name="author" content="Hengyinayo">
@@ -23,30 +23,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="흥이나요 컴퍼니">
-<meta property="og:title" content="ipybb 테스팅">
-<meta property="og:url" content="http://localhost:4000/testIpynb/">
+<meta property="og:title" content="Github Blog (with Minimal Mistakes)">
+<meta property="og:url" content="http://localhost:4000/github/Github-Blog/">
 
 
-  <meta property="og:description" content="print(&quot;hello&quot;)">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-13T00:00:00+09:00">
+  <meta property="og:description" content="실시간 모니터링">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-08-12T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/testIpynb/">
+
+<link rel="canonical" href="http://localhost:4000/github/Github-Blog/">
 
 
 
@@ -158,7 +158,17 @@
         <span class="sep">/</span>
       
       
-        <li class="current">ipybb 테스팅</li>
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#github" itemprop="item"><span itemprop="name">Github</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Github Blog (with Minimal Mistakes)</li>
       
     
   </ol>
@@ -281,16 +291,16 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ipybb 테스팅">
-    <meta itemprop="description" content="print(&quot;hello&quot;)">
-    <meta itemprop="datePublished" content="2021-01-13T00:00:00+09:00">
+    <meta itemprop="headline" content="Github Blog (with Minimal Mistakes)">
+    <meta itemprop="description" content="실시간 모니터링">
+    <meta itemprop="datePublished" content="2024-08-12T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="http://localhost:4000/testIpynb/" itemprop="url">ipybb 테스팅
+            <a href="http://localhost:4000/github/Github-Blog/" itemprop="url">Github Blog (with Minimal Mistakes)
 </a>
           </h1>
           
@@ -301,7 +311,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2021-01-13T00:00:00+09:00">2021-01-13</time>
+        <time datetime="2024-08-12T00:00:00+09:00">2024-08-12</time>
       </span>
     
 
@@ -326,14 +336,110 @@
 
       <section class="page__content" itemprop="text">
         
-        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">hello</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
+              <ul class="toc__menu"><li><a href="#실시간-모니터링">실시간 모니터링</a></li><li><a href="#_configyml">_config.yml</a></li><li><a href="#comments">Comments</a></li><li><a href="#category--tag">Category &amp; Tag</a></li><li><a href="#404-page">404 Page</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="실시간-모니터링">실시간 모니터링</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello
-</code></pre></div></div>
+<p>문제:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<ul>
+  <li>블로그 수정 시, 실시간으로 빠르게 변경 사항을 확인하고 싶다</li>
+</ul>
+
+<p>해결:</p>
+
+<ul>
+  <li>Ruby로 서버를 열어, 로컬 호스트로 실시간 변경사항 모니터링</li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li><a href="http://localhost:4000">localhost:4000</a> 접속</li>
+</ul>
+
+<hr />
+
+<h1 id="_configyml">_config.yml</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code>파일로 웹 페이지의 기본적인 세팅을 수정해 줄 수 있다.</li>
+  <li>자세한 것은 아래 “Minimal Mistakes” 문서 참고</li>
+</ul>
+
+<hr />
+
+<h1 id="comments">Comments</h1>
+
+<ul>
+  <li>disqus로 댓글을 설정 해줌 → 추가적인 기능이 있는데 유료임
+    <ul>
+      <li>관리는 disqus 웹사이트에서 할 수 있다</li>
+    </ul>
+  </li>
+</ul>
+
+<p>→ 추가적인 무료이면서 좋은 것이 필요할 듯</p>
+
+<hr />
+<h1 id="category--tag">Category &amp; Tag</h1>
+
+<p>하나의 카테고리, 여러 개의 태그</p>
+
+<ul>
+  <li>예시:
+    <ul>
+      <li>카테고리: coding</li>
+      <li>태그: python, c++, java, etc…</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code></p>
+
+<ul>
+  <li>카테고리 레이아웃 설정 → <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>파일 설정할 때, <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code> 파일에 설정한 목록들을 매핑해야됨
+    <ul>
+      <li>Title 등</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_data/navigation.yml</code></p>
+
+<ul>
+  <li>네비게이션 바 설정</li>
+  <li>API 설계 느낌</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_psts/페이지.md</code></p>
+
+<ul>
+  <li>예시:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: single
+title: "첫 포스팅 (테스트)"
+categories: test
+---
 </code></pre></div></div>
+<hr />
+
+<h1 id="404-page">404 Page</h1>
+<p>깃헙 블로그에서 없는 페이지로 이동을 하였을 때 (url 입력으로), Not Found 페이지를 띄우는 데, 매우 안 이쁘다.</p>
+<ul>
+  <li>404 Page를 만들어주자 $\rightarrow$ <code class="language-plaintext highlighter-rouge">_pages/404.md</code>에서 설정 해줄 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/없는페이지</code>여야지 반영되고, <code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/태그/없는페이지</code>면 반영이 되지 않는다.</li>
+</ul>
+
+<hr />
+<p>Reference:</p>
+
+<p>https://www.youtube.com/watch?v=–MMmHbSH9k&amp;list=PLIMb_GuNnFwfQBZQwD-vCZENL5YLDZekr&amp;index=2</p>
+
+<p>https://mmistakes.github.io/minimal-mistakes/</p>
 
         
       </section>
@@ -341,11 +447,45 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#github-blog" class="page__taxonomy-item p-category" rel="tag">Github Blog</a><span class="sep">, </span>
+    
+      <a href="/tags/#jekyll-theme" class="page__taxonomy-item p-category" rel="tag">Jekyll Theme</a><span class="sep">, </span>
+    
+      <a href="/tags/#minimal-mistakes" class="page__taxonomy-item p-category" rel="tag">Minimal Mistakes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#github" class="page__taxonomy-item p-category" rel="tag">Github</a>
+    
+    </span>
+  </p>
 
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2021-01-13T00:00:00+09:00">2021-01-13</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-08-12T00:00:00+09:00">2024-08-12</time></p>
 
       </footer>
 
@@ -354,23 +494,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=ipybb+%ED%85%8C%EC%8A%A4%ED%8C%85%20http%3A%2F%2Flocalhost%3A4000%2FtestIpynb%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Github+Blog+%28with+Minimal+Mistakes%29%20http%3A%2F%2Flocalhost%3A4000%2Fgithub%2FGithub-Blog%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FtestIpynb%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgithub%2FGithub-Blog%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/testIpynb/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/github/Github-Blog/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/test/first/" class="pagination--pager" title="첫 포스팅 (테스트)
+      <a href="/testIpynb/" class="pagination--pager" title="ipybb 테스팅
 ">이전</a>
     
     
-      <a href="/github/Github-Blog/" class="pagination--pager" title="Github Blog (with Minimal Mistakes)
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -397,7 +536,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/github/Github-Blog/" rel="permalink">Github Blog (with Minimal Mistakes)
+        <a href="/testIpynb/" rel="permalink">ipybb 테스팅
 </a>
       
     </h2>
@@ -409,7 +548,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2024-08-12T00:00:00+09:00">2024-08-12</time>
+        <time datetime="2021-01-13T00:00:00+09:00">2021-01-13</time>
       </span>
     
 
@@ -429,7 +568,8 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">실시간 모니터링
+    <p class="archive__item-excerpt" itemprop="description">print("hello")
+
 </p>
   </article>
 </div>
@@ -537,8 +677,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/testIpynb/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/testIpynb"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/github/Github-Blog/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/github/Github Blog"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

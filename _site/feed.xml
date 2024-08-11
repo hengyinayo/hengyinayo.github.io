@@ -1,10 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-11T23:16:37+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">흥이나요 컴퍼니</title><subtitle>흥이나요의 블로그</subtitle><author><name>Hengyinayo</name></author><entry><title type="html">첫 포스팅 (테스트)</title><link href="http://localhost:4000/first/" rel="alternate" type="text/html" title="첫 포스팅 (테스트)" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-13T00:00:00+09:00</updated><id>http://localhost:4000/first</id><content type="html" xml:base="http://localhost:4000/first/"><![CDATA[<h1 id="블로그-테스트">블로그 테스트</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-12T01:28:16+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">흥이나요 컴퍼니</title><subtitle>흥이나요의 블로그</subtitle><author><name>Hengyinayo</name></author><entry><title type="html">Github Blog (with Minimal Mistakes)</title><link href="http://localhost:4000/github/Github-Blog/" rel="alternate" type="text/html" title="Github Blog (with Minimal Mistakes)" /><published>2024-08-12T00:00:00+09:00</published><updated>2024-08-12T00:00:00+09:00</updated><id>http://localhost:4000/github/Github%20Blog</id><content type="html" xml:base="http://localhost:4000/github/Github-Blog/"><![CDATA[<h1 id="실시간-모니터링">실시간 모니터링</h1>
+
+<p>문제:</p>
+
+<ul>
+  <li>블로그 수정 시, 실시간으로 빠르게 변경 사항을 확인하고 싶다</li>
+</ul>
+
+<p>해결:</p>
+
+<ul>
+  <li>Ruby로 서버를 열어, 로컬 호스트로 실시간 변경사항 모니터링</li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li><a href="http://localhost:4000">localhost:4000</a> 접속</li>
+</ul>
+
+<hr />
+
+<h1 id="_configyml">_config.yml</h1>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code>파일로 웹 페이지의 기본적인 세팅을 수정해 줄 수 있다.</li>
+  <li>자세한 것은 아래 “Minimal Mistakes” 문서 참고</li>
+</ul>
+
+<hr />
+
+<h1 id="comments">Comments</h1>
+
+<ul>
+  <li>disqus로 댓글을 설정 해줌 → 추가적인 기능이 있는데 유료임
+    <ul>
+      <li>관리는 disqus 웹사이트에서 할 수 있다</li>
+    </ul>
+  </li>
+</ul>
+
+<p>→ 추가적인 무료이면서 좋은 것이 필요할 듯</p>
+
+<hr />
+<h1 id="category--tag">Category &amp; Tag</h1>
+
+<p>하나의 카테고리, 여러 개의 태그</p>
+
+<ul>
+  <li>예시:
+    <ul>
+      <li>카테고리: coding</li>
+      <li>태그: python, c++, java, etc…</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code></p>
+
+<ul>
+  <li>카테고리 레이아웃 설정 → <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>파일 설정할 때, <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code> 파일에 설정한 목록들을 매핑해야됨
+    <ul>
+      <li>Title 등</li>
+    </ul>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_data/navigation.yml</code></p>
+
+<ul>
+  <li>네비게이션 바 설정</li>
+  <li>API 설계 느낌</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">_psts/페이지.md</code></p>
+
+<ul>
+  <li>예시:</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: single
+title: "첫 포스팅 (테스트)"
+categories: test
+---
+</code></pre></div></div>
+<hr />
+
+<h1 id="404-page">404 Page</h1>
+<p>깃헙 블로그에서 없는 페이지로 이동을 하였을 때 (url 입력으로), Not Found 페이지를 띄우는 데, 매우 안 이쁘다.</p>
+<ul>
+  <li>404 Page를 만들어주자 $\rightarrow$ <code class="language-plaintext highlighter-rouge">_pages/404.md</code>에서 설정 해줄 수 있다.</li>
+  <li><code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/없는페이지</code>여야지 반영되고, <code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/태그/없는페이지</code>면 반영이 되지 않는다.</li>
+</ul>
+
+<hr />
+<p>Reference:</p>
+
+<p>https://www.youtube.com/watch?v=–MMmHbSH9k&amp;list=PLIMb_GuNnFwfQBZQwD-vCZENL5YLDZekr&amp;index=2</p>
+
+<p>https://mmistakes.github.io/minimal-mistakes/</p>]]></content><author><name>Hengyinayo</name></author><category term="Github" /><category term="Github Blog" /><category term="Minimal Mistakes" /><category term="Jekyll Theme" /><summary type="html"><![CDATA[실시간 모니터링]]></summary></entry><entry><title type="html">첫 포스팅 (테스트)</title><link href="http://localhost:4000/test/first/" rel="alternate" type="text/html" title="첫 포스팅 (테스트)" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-13T00:00:00+09:00</updated><id>http://localhost:4000/test/first</id><content type="html" xml:base="http://localhost:4000/test/first/"><![CDATA[<h1 id="블로그-테스트">블로그 테스트</h1>
 
 <p>테스트 테스트 테스트</p>
 
 <p>실시간 반영 테스트</p>
 
-<p><img src="../assets/images/test.png" alt="테스트" /></p>]]></content><author><name>Hengyinayo</name></author><summary type="html"><![CDATA[블로그 테스트]]></summary></entry><entry><title type="html">ipybb 테스팅</title><link href="http://localhost:4000/testIpynb/" rel="alternate" type="text/html" title="ipybb 테스팅" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-13T00:00:00+09:00</updated><id>http://localhost:4000/testIpynb</id><content type="html" xml:base="http://localhost:4000/testIpynb/"><![CDATA[<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">hello</span><span class="sh">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+<span class="kn">import</span> <span class="n">string</span>
+
+<span class="k">def</span> <span class="nf">generate_password</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">This function generates a random password
+    of a given length using a combination of
+    uppercase letters, lowercase letters,
+    digits, and special characters</span><span class="sh">"""</span>
+    
+    <span class="c1"># Define a string containing all possible characters
+</span>    <span class="n">all_chars</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">ascii_letters</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">digits</span> <span class="o">+</span> <span class="n">string</span><span class="p">.</span><span class="n">punctuation</span>
+    
+    <span class="c1"># Generate a password using a random selection of characters
+</span>    <span class="n">password</span> <span class="o">=</span> <span class="sh">""</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">all_chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">password</span>
+
+<span class="c1"># Test the function by generating a password of length 10
+</span><span class="n">password</span> <span class="o">=</span> <span class="nf">generate_password</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../assets/images/test.png" alt="테스트" /></p>]]></content><author><name>Hengyinayo</name></author><category term="test" /><category term="테스트1" /><category term="테스트2" /><category term="테스트3" /><summary type="html"><![CDATA[블로그 테스트]]></summary></entry><entry><title type="html">ipybb 테스팅</title><link href="http://localhost:4000/testIpynb/" rel="alternate" type="text/html" title="ipybb 테스팅" /><published>2021-01-13T00:00:00+09:00</published><updated>2021-01-13T00:00:00+09:00</updated><id>http://localhost:4000/testIpynb</id><content type="html" xml:base="http://localhost:4000/testIpynb/"><![CDATA[<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">hello</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hello
