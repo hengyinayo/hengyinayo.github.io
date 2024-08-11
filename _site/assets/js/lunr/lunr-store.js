@@ -16,4 +16,10 @@ var store = [{
         "tags": ["Github Blog","Minimal Mistakes","Jekyll Theme"],
         "url": "/github/Github-Blog/",
         "teaser": null
+      },{
+        "title": "BFS (Breadth-First Search)",
+        "excerpt":"BFS 맹목적 탐색방법의 하나로 시작 정점을 방문한 후 시작 정점에 인접한 모든 정점들을 우선 방문하는 방법. 더 이상 방문하지 않은 정점이 없을 때까지 방문하지 않은 모든 node들에 대해서 BFS를 적용. 특징: queue를 사용 그래야 레벨 순서대로 접근 가능 문제 해결: 시작하는 칸을 방문했다는 표시를 하고 큐에 넣어줌 큐의 front에 있는...","categories": ["Algorithm"],
+        "tags": ["C++"],
+        "url": "/algorithm/BFS/",
+        "teaser": null
       }]
