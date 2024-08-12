@@ -24,8 +24,8 @@ var store = [{
         "teaser": null
       },{
         "title": "Ch15 구글 드라이브 설계",
-        "excerpt":"블로그    ","categories": ["가상면접설계로배우는대규모시스템설계기초"],
+        "excerpt":"블로그    ","categories": ["가상 면접 설계로 배우는 대규모 시스템 설계 기초"],
         "tags": ["가상면접설계로배우는대규모시스템설계기초"],
-        "url": "/%EA%B0%80%EC%83%81%EB%A9%B4%EC%A0%91%EC%84%A4%EA%B3%84%EB%A1%9C%EB%B0%B0%EC%9A%B0%EB%8A%94%EB%8C%80%EA%B7%9C%EB%AA%A8%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%84%A4%EA%B3%84%EA%B8%B0%EC%B4%88/Ch15-%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%84%A4%EA%B3%84/",
+        "url": "/%EA%B0%80%EC%83%81%20%EB%A9%B4%EC%A0%91%20%EC%84%A4%EA%B3%84%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88/Ch15-%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%84%A4%EA%B3%84/",
         "teaser": null
       }]
