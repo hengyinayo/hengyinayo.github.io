@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Ch15 구글 드라이브 설계"
+title: "InfluxDB + Grafana를 EC2 Instance 위에서 연동하기"
 categories: [TSDB]
 tag: [InfluxDB]
 ---
