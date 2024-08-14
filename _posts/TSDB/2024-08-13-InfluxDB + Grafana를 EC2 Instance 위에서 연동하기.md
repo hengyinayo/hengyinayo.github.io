@@ -7,6 +7,14 @@ tag: [InfluxDB]
 
 # InfluxDB 환경 설정
 
+## 1. Service with systemd
+
+InfluxDB 시작
+`sudo service influxdb start`
+
+## 2. Influxd binary
+
+
 
 
 Reference:
