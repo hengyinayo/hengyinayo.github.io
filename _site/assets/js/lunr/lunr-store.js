@@ -28,4 +28,22 @@ var store = [{
         "tags": ["가상면접설계로배우는대규모시스템설계기초"],
         "url": "/%EA%B0%80%EC%83%81%20%EB%A9%B4%EC%A0%91%20%EC%84%A4%EA%B3%84%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88/Ch15-%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%84%A4%EA%B3%84/",
         "teaser": null
+      },{
+        "title": "InfluxDB + Grafana를 EC2 Instance 위에서 연동하기",
+        "excerpt":"InfluxDB 환경 설정 0. InfluxDB 설치 아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다: InfluxDB Documentation 1. Service with systemd InfluxDB 시작 - Systemd로 설치 했을 경우: sudo service influxdb start influxd Binary로 설치 했을 경우: ./influxdb2-2.7.8/usr/bin/influxd InfluxDB 서버 환경 체크 sudo service influxdb status 2. AWS 포트 열어주기...","categories": ["TSDB"],
+        "tags": ["InfluxDB"],
+        "url": "/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/",
+        "teaser": null
+      },{
+        "title": "LOGER: A Learned Optimizer towards Generating Efficient and Robust Query Execution Plans",
+        "excerpt":" ","categories": ["논문"],
+        "tags": ["Query Optimizer"],
+        "url": "/%EB%85%BC%EB%AC%B8/LOGER-A-Learned-Optimizer-towards-Generating-Efficient-and-Robust-Query-Execution-Plans/",
+        "teaser": null
+      },{
+        "title": "탄력적 IP 주소",
+        "excerpt":"탄력적 IP 주소 (Elastic IP Address)  ","categories": ["AWS"],
+        "tags": ["EC2"],
+        "url": "/aws/%ED%83%84%EB%A0%A5%EC%A0%81-IP-%EC%A3%BC%EC%86%8C/",
+        "teaser": null
       }]

@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Github Blog (with Minimal Mistakes) | 흥이나요 컴퍼니</title>
-<meta name="description" content="실시간 모니터링">
+<!-- begin _includes/seo.html --><title>InfluxDB + Grafana를 EC2 Instance 위에서 연동하기 | 흥이나요 컴퍼니</title>
+<meta name="description" content="InfluxDB 환경 설정">
 
 
   <meta name="author" content="Hengyinayo">
@@ -23,30 +23,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="흥이나요 컴퍼니">
-<meta property="og:title" content="Github Blog (with Minimal Mistakes)">
-<meta property="og:url" content="http://localhost:4000/github/Github-Blog/">
+<meta property="og:title" content="InfluxDB + Grafana를 EC2 Instance 위에서 연동하기">
+<meta property="og:url" content="http://localhost:4000/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">
 
 
-  <meta property="og:description" content="실시간 모니터링">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2024-08-11T00:00:00+09:00">
+  <meta property="og:description" content="InfluxDB 환경 설정">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2024-08-13T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/github/Github-Blog/">
+
+<link rel="canonical" href="http://localhost:4000/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/">
 
 
 
@@ -160,7 +160,7 @@
       
         
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="/categories/#github" itemprop="item"><span itemprop="name">Github</span></a>
+          <a href="/categories/#tsdb" itemprop="item"><span itemprop="name">Tsdb</span></a>
           <meta itemprop="position" content="2" />
         </li>
         <span class="sep">/</span>
@@ -168,7 +168,7 @@
     
       
       
-        <li class="current">Github Blog (with Minimal Mistakes)</li>
+        <li class="current">InfluxDB + Grafana를 EC2 Instance 위에서 연동하기</li>
       
     
   </ol>
@@ -292,16 +292,16 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Github Blog (with Minimal Mistakes)">
-    <meta itemprop="description" content="실시간 모니터링">
-    <meta itemprop="datePublished" content="2024-08-11T00:00:00+09:00">
+    <meta itemprop="headline" content="InfluxDB + Grafana를 EC2 Instance 위에서 연동하기">
+    <meta itemprop="description" content="InfluxDB 환경 설정">
+    <meta itemprop="datePublished" content="2024-08-13T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="http://localhost:4000/github/Github-Blog/" itemprop="url">Github Blog (with Minimal Mistakes)
+            <a href="http://localhost:4000/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/" itemprop="url">InfluxDB + Grafana를 EC2 Instance 위에서 연동하기
 </a>
           </h1>
           
@@ -312,7 +312,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2024-08-11T00:00:00+09:00">2024-08-11</time>
+        <time datetime="2024-08-13T00:00:00+09:00">2024-08-13</time>
       </span>
     
 
@@ -337,110 +337,64 @@
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On This Page</h4></header>
-              <ul class="toc__menu"><li><a href="#실시간-모니터링">실시간 모니터링</a></li><li><a href="#_configyml">_config.yml</a></li><li><a href="#comments">Comments</a></li><li><a href="#category--tag">Category &amp; Tag</a></li><li><a href="#404-page">404 Page</a></li></ul>
-            </nav>
-          </aside>
-        
-        <h1 id="실시간-모니터링">실시간 모니터링</h1>
+        <h1 id="influxdb-환경-설정">InfluxDB 환경 설정</h1>
 
-<p>문제:</p>
+<h2 id="0-influxdb-설치">0. InfluxDB 설치</h2>
+<p>아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다:
+<a href="https://docs.influxdata.com/influxdb/v2/install/">InfluxDB Documentation</a></p>
 
-<ul>
-  <li>블로그 수정 시, 실시간으로 빠르게 변경 사항을 확인하고 싶다</li>
-</ul>
+<h2 id="1-service-with-systemd">1. Service with systemd</h2>
 
-<p>해결:</p>
-
-<ul>
-  <li>Ruby로 서버를 열어, 로컬 호스트로 실시간 변경사항 모니터링</li>
-  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
-  <li><a href="http://localhost:4000">localhost:4000</a> 접속</li>
-</ul>
-
-<hr />
-
-<h1 id="_configyml">_config.yml</h1>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">_config.yml</code>파일로 웹 페이지의 기본적인 세팅을 수정해 줄 수 있다.</li>
-  <li>자세한 것은 아래 “Minimal Mistakes” 문서 참고</li>
-</ul>
-
-<hr />
-
-<h1 id="comments">Comments</h1>
-
-<ul>
-  <li>disqus로 댓글을 설정 해줌 → 추가적인 기능이 있는데 유료임
+<ol>
+  <li>InfluxDB 시작 -
     <ul>
-      <li>관리는 disqus 웹사이트에서 할 수 있다</li>
+      <li>
+        <p>Systemd로 설치 했을 경우:<br />
+ <code class="language-plaintext highlighter-rouge">sudo service influxdb start</code> <br />
+ <code class="language-plaintext highlighter-rouge">influxd</code></p>
+      </li>
+      <li>
+        <p>Binary로 설치 했을 경우:<br />
+ <code class="language-plaintext highlighter-rouge">./influxdb2-2.7.8/usr/bin/influxd</code></p>
+      </li>
     </ul>
   </li>
-</ul>
+  <li>InfluxDB 서버 환경 체크 <br />
+ <code class="language-plaintext highlighter-rouge">sudo service influxdb status</code></li>
+</ol>
 
-<p>→ 추가적인 무료이면서 좋은 것이 필요할 듯</p>
+<h1 id="2-aws-포트-열어주기">2. AWS 포트 열어주기</h1>
 
-<hr />
-<h1 id="category--tag">Category &amp; Tag</h1>
-
-<p>하나의 카테고리, 여러 개의 태그</p>
-
-<ul>
-  <li>예시:
-    <ul>
-      <li>카테고리: coding</li>
-      <li>태그: python, c++, java, etc…</li>
-    </ul>
+<ol>
+  <li>
+    <p>EC2를 생성해준다</p>
   </li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code></p>
-
-<ul>
-  <li>카테고리 레이아웃 설정 → <code class="language-plaintext highlighter-rouge">_data/navigation.yml</code>파일 설정할 때, <code class="language-plaintext highlighter-rouge">_pages/category-archive.md</code> 파일에 설정한 목록들을 매핑해야됨
-    <ul>
-      <li>Title 등</li>
-    </ul>
+  <li>
+    <p>보안 설정에서 아래 이미지처럼 설정을 해주어, 포트 8086을 열어준다.
+<img src="/assets/images/InfluxDB/1.png" alt="" /></p>
   </li>
-</ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&lt;퍼블릭 IPv4 주소&gt;:8086</code>에 접속하면 InfluxDB 자체에서 제공하는 UI에 접속하는 것을 볼 수 있다.</p>
+  </li>
+</ol>
 
-<p><code class="language-plaintext highlighter-rouge">_data/navigation.yml</code></p>
+<blockquote>
+  <p>추가 -<br />
+<a href="/aws/탄력적-IP-주소/">탄력적 IP주소</a></p>
+</blockquote>
 
-<ul>
-  <li>네비게이션 바 설정</li>
-  <li>API 설계 느낌</li>
-</ul>
+<h2 id="3-grafana-설치">3. Grafana 설치</h2>
 
-<p><code class="language-plaintext highlighter-rouge">_psts/페이지.md</code></p>
+<ol>
+  <li>
+    <p>아래 링크를 따라서 Grafana oss 버전을 설치해주자.<br />
+<a href="!https://grafana.com/grafana/download">Grafana 설치</a></p>
+  </li>
+  <li></li>
+</ol>
 
-<ul>
-  <li>예시:</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: single
-title: "첫 포스팅 (테스트)"
-categories: test
----
-</code></pre></div></div>
-<hr />
-
-<h1 id="404-page">404 Page</h1>
-<p>깃헙 블로그에서 없는 페이지로 이동을 하였을 때 (url 입력으로), Not Found 페이지를 띄우는 데, 매우 안 이쁘다.</p>
-<ul>
-  <li>404 Page를 만들어주자 $\rightarrow$ <code class="language-plaintext highlighter-rouge">_pages/404.md</code>에서 설정 해줄 수 있다.</li>
-  <li><code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/없는페이지</code>여야지 반영되고, <code class="language-plaintext highlighter-rouge">hengyinayo/카테고리/태그/없는페이지</code>면 반영이 되지 않는다.</li>
-</ul>
-
-<hr />
-<p>Reference:</p>
-
-<p>https://www.youtube.com/watch?v=–MMmHbSH9k&amp;list=PLIMb_GuNnFwfQBZQwD-vCZENL5YLDZekr&amp;index=2</p>
-
-<p>https://mmistakes.github.io/minimal-mistakes/</p>
+<p>Reference: <br />
+<a href="https://docs.influxdata.com/influxdb/v2/install/">InfluxDB Documentation</a></p>
 
         
       </section>
@@ -457,11 +411,7 @@ categories: test
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#github-blog" class="page__taxonomy-item p-category" rel="tag">Github Blog</a><span class="sep">, </span>
-    
-      <a href="/tags/#jekyll-theme" class="page__taxonomy-item p-category" rel="tag">Jekyll Theme</a><span class="sep">, </span>
-    
-      <a href="/tags/#minimal-mistakes" class="page__taxonomy-item p-category" rel="tag">Minimal Mistakes</a>
+      <a href="/tags/#influxdb" class="page__taxonomy-item p-category" rel="tag">InfluxDB</a>
     
     </span>
   </p>
@@ -478,7 +428,7 @@ categories: test
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#github" class="page__taxonomy-item p-category" rel="tag">Github</a>
+      <a href="/categories/#tsdb" class="page__taxonomy-item p-category" rel="tag">TSDB</a>
     
     </span>
   </p>
@@ -486,7 +436,7 @@ categories: test
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-08-11T00:00:00+09:00">2024-08-11</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2024-08-13T00:00:00+09:00">2024-08-13</time></p>
 
       </footer>
 
@@ -495,22 +445,22 @@ categories: test
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Github+Blog+%28with+Minimal+Mistakes%29%20http%3A%2F%2Flocalhost%3A4000%2Fgithub%2FGithub-Blog%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=InfluxDB+%2B+Grafana%EB%A5%BC+EC2+Instance+%EC%9C%84%EC%97%90%EC%84%9C+%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Ftsdb%2FInfluxDB-%2B-Grafana%25EB%25A5%25BC-EC2-Instance-%25EC%259C%2584%25EC%2597%2590%25EC%2584%259C-%25EC%2597%25B0%25EB%258F%2599%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgithub%2FGithub-Blog%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftsdb%2FInfluxDB-%2B-Grafana%25EB%25A5%25BC-EC2-Instance-%25EC%259C%2584%25EC%2597%2590%25EC%2584%259C-%25EC%2597%25B0%25EB%258F%2599%25ED%2595%2598%25EA%25B8%25B0%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/github/Github-Blog/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/testing/test2/" class="pagination--pager" title="ipybb 테스팅
+      <a href="/%EA%B0%80%EC%83%81%20%EB%A9%B4%EC%A0%91%20%EC%84%A4%EA%B3%84%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88/Ch15-%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%84%A4%EA%B3%84/" class="pagination--pager" title="Ch15 구글 드라이브 설계
 ">이전</a>
     
     
-      <a href="/algorithm/BFS/" class="pagination--pager" title="BFS (Breadth-First Search)
+      <a href="/%EB%85%BC%EB%AC%B8/LOGER-A-Learned-Optimizer-towards-Generating-Efficient-and-Robust-Query-Execution-Plans/" class="pagination--pager" title="LOGER: A Learned Optimizer towards Generating Efficient and Robust Query Execution Plans
 ">다음</a>
     
   </nav>
@@ -634,54 +584,6 @@ categories: test
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/" rel="permalink">InfluxDB + Grafana를 EC2 Instance 위에서 연동하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2024-08-13T00:00:00+09:00">2024-08-13</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">InfluxDB 환경 설정
-</p>
-  </article>
-</div>
-
-    
-      
-      
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/%EA%B0%80%EC%83%81%20%EB%A9%B4%EC%A0%91%20%EC%84%A4%EA%B3%84%EB%A1%9C%20%EB%B0%B0%EC%9A%B0%EB%8A%94%20%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%20%EA%B8%B0%EC%B4%88/Ch15-%EA%B5%AC%EA%B8%80-%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C-%EC%84%A4%EA%B3%84/" rel="permalink">Ch15 구글 드라이브 설계
 </a>
       
@@ -716,6 +618,54 @@ categories: test
 
     <p class="archive__item-excerpt" itemprop="description">블로그
 
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm/BFS/" rel="permalink">BFS (Breadth-First Search)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2024-08-12T00:00:00+09:00">2024-08-12</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">BFS
 </p>
   </article>
 </div>
@@ -775,8 +725,8 @@ categories: test
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/github/Github-Blog/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/github/Github Blog"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "http://localhost:4000/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/tsdb/InfluxDB + Grafana를 EC2 Instance 위에서 연동하기"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
