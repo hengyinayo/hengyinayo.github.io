@@ -3,16 +3,17 @@ layout: single
 title: "InfluxDB + Grafana를 EC2 Instance 위에서 연동하기"
 categories: [TSDB]
 tag: [InfluxDB]
+toc: true
 ---
 
-# InfluxDB 환경 설정
+# 1. InfluxDB 환경 설정
 
-## 0. InfluxDB 설치
-아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다:
+## 1-0. InfluxDB 설치
+아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다:  
 [InfluxDB Documentation](https://docs.influxdata.com/influxdb/v2/install/)
 
 
-## 1. Service with systemd
+## 1-1. Service with systemd
 
 1. InfluxDB 시작 -   
     - Systemd로 설치 했을 경우:  
@@ -40,12 +41,13 @@ tag: [InfluxDB]
 > [탄력적 IP주소](/aws/탄력적-IP-주소/)
 
 
-## 3. Grafana 설치
+## 2-1. Grafana 설치
 
 1. 아래 링크를 따라서 Grafana oss 버전을 설치해주자.  
-[Grafana 설치](!https://grafana.com/grafana/download)
+[Grafana 설치](https://grafana.com/grafana/download)
 
 2. 
 
 Reference: \
-[InfluxDB Documentation](https://docs.influxdata.com/influxdb/v2/install/)
+[InfluxDB Documentation](https://docs.influxdata.com/influxdb/v2/install/)  
+[Grafana Dicumentation](https://grafana.com/grafana/download)

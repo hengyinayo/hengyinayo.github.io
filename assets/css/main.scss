@@ -7,3 +7,8 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+code {
+    /*background-color: #f8f8f8;   기존 배경색 (흰색) */
+    color: red; /* 글자 색상 빨강 */
+  }

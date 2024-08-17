@@ -30,7 +30,7 @@ var store = [{
         "teaser": null
       },{
         "title": "InfluxDB + Grafana를 EC2 Instance 위에서 연동하기",
-        "excerpt":"InfluxDB 환경 설정 0. InfluxDB 설치 아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다: InfluxDB Documentation 1. Service with systemd InfluxDB 시작 - Systemd로 설치 했을 경우: sudo service influxdb start influxd Binary로 설치 했을 경우: ./influxdb2-2.7.8/usr/bin/influxd InfluxDB 서버 환경 체크 sudo service influxdb status 2. AWS 포트 열어주기...","categories": ["TSDB"],
+        "excerpt":"1. InfluxDB 환경 설정 1-0. InfluxDB 설치 아래 링크를 따라서, 자신의 환경에 맞는 버전을 다운받으면 된다: InfluxDB Documentation 1-1. Service with systemd InfluxDB 시작 - Systemd로 설치 했을 경우: sudo service influxdb start influxd Binary로 설치 했을 경우: ./influxdb2-2.7.8/usr/bin/influxd InfluxDB 서버 환경 체크 sudo service influxdb status 2. AWS 포트...","categories": ["TSDB"],
         "tags": ["InfluxDB"],
         "url": "/tsdb/InfluxDB-+-Grafana%EB%A5%BC-EC2-Instance-%EC%9C%84%EC%97%90%EC%84%9C-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0/",
         "teaser": null
@@ -45,5 +45,11 @@ var store = [{
         "excerpt":"탄력적 IP 주소 (Elastic IP Address)  ","categories": ["AWS"],
         "tags": ["EC2"],
         "url": "/aws/%ED%83%84%EB%A0%A5%EC%A0%81-IP-%EC%A3%BC%EC%86%8C/",
+        "teaser": null
+      },{
+        "title": "CH04 데이터베이스",
+        "excerpt":"데이터베이스의 기본      데이터베이스(DB, DataBase):     일정한 규칙, 혹은 규약을 통해 구조화되어 저장되는 데이터의 모음.   실시간 접근과 동시 공유가 가능.   DBMS (DataBase Management System):     해당 데이터베이스를 제어, 관리하는 통합 시스템   데이터베이스 안에 있는 데이터들은 특정 DBMS마다 정의된 쿼리 언어 (query language)를 통해 삽입, 삭제, 수정, 조회 등을 수행할 수 있다.   ","categories": ["면접을 위한 cs 전공 노트","cs"],
+        "tags": ["Database"],
+        "url": "/%EB%A9%B4%EC%A0%91%EC%9D%84%20%EC%9C%84%ED%95%9C%20cs%20%EC%A0%84%EA%B3%B5%20%EB%85%B8%ED%8A%B8/cs/Ch04-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/",
         "teaser": null
       }]
